@@ -1,8 +1,10 @@
 # Attention
 The code in this fork is created entirely by Gemini (3 Flash) and GH Copilot (whatever model it deems fit).
 
+This repo exists in tandem with the original repo, specially providing features to Windows before this is stable enough.
+
 # Status
-Compiles, runs to UI. Have quirks while typing. Yet to be implemented.
+Compiles, runs to UI. Have quirks while typing. Features yet to be implemented.
 - [x] IME stack rewrite/implement for Windows
 
 Works, but have some errors. Probably won't fix those since I've seen EVKey making the same error on my Windows installation.
@@ -13,7 +15,7 @@ Functional, albeit incomplete: missing icon, quick switch,...
 
 Some functions are missing; no per-app enable/disable;...
 
-# What is missing
+# Help needed
 - Multiple functions are using placeholders e.g. file pickers
 - Some features in the UI outright just not work
 
@@ -45,32 +47,11 @@ The goal is to create an input method editor that enable users to type Vietnames
 either VNI or TELEX method. Other than that, no other features are planned.
 
 ## How to install
+- macOS (ARM): Grab the build from https://nightly.link/imchocomint/goxkey-win/workflows/build/main?preview and install like any .app apps
+- Windows: Download from Releases
 
-There are 2 options to download GõKey at this moment: Build from source or Download the Nightly build.
-
-### Option 1: Download the Nightly Build
-
-Nightly build is the prebuilt binary that automatically bundled everytime we merged the code to the `main` branch.
-
-You can download it at the Release page here: https://github.com/huytd/goxkey/releases/tag/nightly-build
-
-### Option 2: Build from source
-
-The source code can be compiled easily:
-
-1. Get the latest stable version of the Rust compiler ([see here](https://rustup.rs/))
-2. Install the [cargo-bundle](https://github.com/burtonageo/cargo-bundle) extension, this is necessary for bundling macOS apps
-3. Checkout the source code of the **gõkey** project
-   ```
-   git clone https://github.com/huytd/goxkey && cd goxkey
-   ```
-4. Run the build command:
-
-   ```
-   cargo build --release
-   ```
-
+## Build
+Clone the repo, then run `cargo build --release`
 ## Dependencies
 - [core-foundation](https://crates.io/crates/core-foundation), [core-graphics](https://crates.io/crates/core-graphics): for event handling on macOS
 - [vi-rs](https://github.com/zerox-dg/vi-rs): the Vietnamese Input Engine
-
